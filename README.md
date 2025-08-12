@@ -25,8 +25,8 @@ I had to try several times to get this result, and it disappeared the next secon
 ### With constant wait time 30 seconds
 
 Next, I tested the keylogger using Wireshark. I visited random websites such as x.com, VirusTotal, and wp.pl, and typed random, important-sounding words and sentences — for example,
-email@personal.com password_unique123456 or
-important data, don’t let anyone but admin have access to it.
+`email@personal.com password_unique123456` or
+`important data, don’t let anyone but admin have access to it.`
 I also made orthographic errors (many unintentionally) to see if this would make the collected keystrokes significantly harder to read. I continued until I reached around 30,000 packets.
 
 Resulting page content:
@@ -57,7 +57,8 @@ Next, to slightly increase the challenge, I added a random wait time to my scrip
 <img width="798" height="314" alt="Zrzut ekranu 2025-08-12 122455" src="https://github.com/user-attachments/assets/c087a001-f813-40dc-afe5-e015f0795619" />  
 
 I generated traffic in a similar way as before by visiting websites such as x.com, Reddit, YouTube, and typing private-looking phrases like:
-"again really important files and data", "how to hack pentagon" and "my credit card number is .........".  
+`again really important files and data`
+`how to hack pentagon" and "my credit card number is .........`  
 
 <img width="1788" height="532" alt="Zrzut ekranu 2025-08-12 121553" src="https://github.com/user-attachments/assets/ce589a64-54ed-4633-993a-e3e41c879196" />
 
