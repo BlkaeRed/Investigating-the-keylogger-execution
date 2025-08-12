@@ -34,9 +34,9 @@ Resulting page content:
 
 Results in wireshark:  
 
-<img width="353" height="135" alt="Zrzut ekranu 2025-08-12 114929" src="https://github.com/user-attachments/assets/da6f679c-a6ea-408e-8f02-f6ed499e476f" />
+<img width="353" height="135" alt="Zrzut ekranu 2025-08-12 114929" src="https://github.com/user-attachments/assets/da6f679c-a6ea-408e-8f02-f6ed499e476f" />  
 
-To analyze the traffic, I first examined every HTTP request and every HTTPS/TLS Client Hello message, which indicates the start of communication:
+To analyze the traffic, I first examined every HTTP request and every HTTPS/TLS Client Hello message, which indicates the start of communication:  
 <img width="259" height="67" alt="Zrzut ekranu 2025-08-12 115419" src="https://github.com/user-attachments/assets/dbc406c3-e835-4e20-a45d-7e2554e191ae" />  
 
 Here's what I found:  
@@ -57,18 +57,19 @@ Next, to slightly increase the challenge, I added a random wait time to my scrip
 <img width="798" height="314" alt="Zrzut ekranu 2025-08-12 122455" src="https://github.com/user-attachments/assets/c087a001-f813-40dc-afe5-e015f0795619" />  
 
 I generated traffic in a similar way as before by visiting websites such as x.com, Reddit, YouTube, and typing private-looking phrases like:
-`again really important files and data`
-`how to hack pentagon" and "my credit card number is .........`  
+`again really important files and data`  
+`how to hack pentagon`  
+`my credit card number is .........`    
 
-<img width="1788" height="532" alt="Zrzut ekranu 2025-08-12 121553" src="https://github.com/user-attachments/assets/ce589a64-54ed-4633-993a-e3e41c879196" />
+<img width="1788" height="532" alt="Zrzut ekranu 2025-08-12 121553" src="https://github.com/user-attachments/assets/ce589a64-54ed-4633-993a-e3e41c879196" />  
 
 From the start, I focused on domainless connections using this Wireshark query:  
-<img width="631" height="52" alt="Zrzut ekranu 2025-08-12 122131" src="https://github.com/user-attachments/assets/fd73b45d-257b-48a9-8802-fa228bc227c9" />  
+<img width="631" height="52" alt="Zrzut ekranu 2025-08-12 122131" src="https://github.com/user-attachments/assets/fd73b45d-257b-48a9-8802-fa228bc227c9" />    
 
 And found this:
-<img width="1425" height="390" alt="Zrzut ekranu 2025-08-12 122119" src="https://github.com/user-attachments/assets/2238702b-f037-43ff-8645-fc980c09a369" />  
+<img width="1425" height="390" alt="Zrzut ekranu 2025-08-12 122119" src="https://github.com/user-attachments/assets/2238702b-f037-43ff-8645-fc980c09a369" />   
 There were many SSDP packets, which is normal and expected, but packets related to the keylogger were still visible. To view them more clearly, I changed the query to specify the found IP address as the destination:  
-<img width="1339" height="167" alt="Zrzut ekranu 2025-08-12 122220" src="https://github.com/user-attachments/assets/7f5981e6-cfb6-4aa5-b2f0-ebb5bab99ff4" />  
+<img width="1339" height="167" alt="Zrzut ekranu 2025-08-12 122220" src="https://github.com/user-attachments/assets/7f5981e6-cfb6-4aa5-b2f0-ebb5bab99ff4" />   
 The screenshot shows that packets are sent at random intervals, making them harder to detect if the traffic volume were larger. With a different (larger) wait-time range, it would be even more difficult — although this would noticeably reduce the keylogger’s efficiency and increase the likelihood of data loss if the user shuts down their PC.
 
 
